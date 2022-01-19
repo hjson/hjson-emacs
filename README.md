@@ -3,13 +3,20 @@
 Currently only allows syntax highlighting.
 Use on any file by executing `M-x hjson-mode` once installed.
 
-<s># Install
+# Install
 
-`M-x package-install hjson-mode`
+<s>`M-x package-install hjson-mode`
 
 You need to have the [MELPA repository](https://melpa.org/) or [MELPA Stable repository](https://stable.melpa.org/) enabled in emacs for this to work.</s>
 
-Sorry for now you will have to build it.
+It may be added to Melpa in the future, but until then execute the following code in the terminal
+
+```bash
+cd ~/.emacs.d
+wget https://raw.githubusercontent.com/stampyzfanz/hjson-emacs/main/hjson-mode.el
+echo "(load-file \"hjson-mode.el\")" >> init.el
+echo "(add-to-list 'auto-mode-alist '(\"\\\\\\\\.hjson\\\\\\\\'\" . hjson-mode))" >> init.el
+```
 
 # Building
 
@@ -18,16 +25,6 @@ If you would like to build it from scratch, clone this repository and append the
 (load-file "[your git repository]/hjson-mode.el")
 (add-to-list 'auto-mode-alist '("\\.hjson\\'" . hjson-mode))
 ```
-
-An alternative is it run 
-```bash
-cd ~/.emacs.d
-wget https://raw.githubusercontent.com/stampyzfanz/hjson-emacs/main/hjson-mode.el
-echo "(load-file \"hjson-mode.el\")" >> init.el
-echo "(add-to-list 'auto-mode-alist '(\"\\\\.hjson\\\\'\" . hjson-mode))" >> init.el
-```
-
-
 
 # Contribution
 
