@@ -20,11 +20,11 @@ If you would like to build it from scratch, clone this repository and append the
 ```
 
 An alternative is it run 
-```
+```bash
 cd ~/.emacs.d
 wget https://raw.githubusercontent.com/stampyzfanz/hjson-emacs/main/hjson-mode.el
-echo '(load-file "hjson-mode.el")' >> init.el
-echo "(add-to-list 'auto-mode-alist '(\"\\\.hjson\\'\" . hjson-mode))" >> init.el
+echo "(load-file \"hjson-mode.el\")" >> init.el
+echo "(add-to-list 'auto-mode-alist '(\"\\\\.hjson\\\\'\" . hjson-mode))" >> init.el
 ```
 
 
@@ -34,10 +34,12 @@ echo "(add-to-list 'auto-mode-alist '(\"\\\.hjson\\'\" . hjson-mode))" >> init.e
 Contribution is encouraged, please feel free to improve. 
 
 For testing changes, I recomend attaching the following code to `hjson-mode.el`
-```(defun reload ()
+```lisp
+(defun reload ()
   "Reloads `hjson-mode'."
   (interactive)
   (load-file "[your git repository]/hjson-mode.el")
-  (hjson-mode))```
+  (hjson-mode))
+  ```
 
 
