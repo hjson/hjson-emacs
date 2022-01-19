@@ -81,9 +81,11 @@
         ("^[^:]*?\\(\\(?:\\(?:[^][(){}:,\s]\\)+\\|\"\\(?:[^\"\\]\\|\\\\.\\)*\"\\)\s*\\):" . (1 font-lock-variable-name-face))
 
         ;; any // or /* at start of line, after end of "value" in quotes, 
-        ;; or after constant and whitespace
-        ("\\(?:^\\|\"\\|true\\|false\\|null\\)\s*\\(\\(//\\|#\\).*\\)" . (1 font-lock-comment-face))
-        
+        ;; or after constant or number and whitespace
+        ("\\(?:^\\|\"\\|true\\|false\\|null\\|[][{}]\\|\
+-?\\(?:0\\|[1-9][0-9]*\\)\\(?:\\(?:\\.[0-9]+\\)?\\(?:[eE][+-]?[0-9]+\\)?\\)?\
+\\)\s*\\(\\(//\\|#\\).*\\)" . (1 font-lock-comment-face))
+
         ;; for key: "values" strings
         ("\"\\(?:[^\"\\\n]\\|\\\\.\\)*\"" . 'font-lock-string-face)
 
