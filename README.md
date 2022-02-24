@@ -21,7 +21,7 @@ echo "(add-to-list 'auto-mode-alist '(\"\\\\\\\\.hjson\\\\\\\\'\" . hjson-mode))
 # Building
 
 If you would like to build it from scratch, clone this repository and append the following to your init file located at `~/.emacs.d/init.el` 
-```
+```lisp
 (load-file "[your git repository]/hjson-mode.el")
 (add-to-list 'auto-mode-alist '("\\.hjson\\'" . hjson-mode))
 ```

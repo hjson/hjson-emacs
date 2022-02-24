@@ -1,8 +1,9 @@
-;;; hjson-mode.el --- Major mode for editing hjson files.
+;;; hjson-mode.el --- Major mode for editing hjson files.            -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2021 Stampyzfanz
 
-;; Author: Stampyzfanz
+;; Author: Stampyzfanz <theorderofthestoneathopscotch@gmail.com>
+;; Created: 1 Jan 2022
 ;; URL: https://hjson.github.io/
 ;; Version: 1.0.0
 ;; Keywords: hjson
@@ -64,7 +65,7 @@
 
 ;; END ''' code
 
-(setq hjson-highlights
+(setq hjson-mode-highlights
       '(
         ;; make sure there is no colons preceeding it to fix 
         ;; https://github.com/hjson/hjson/issues/112
@@ -104,13 +105,14 @@
   "Major mode for editing hjson files."
 
   ;; code for syntax highlighting
-  (setq font-lock-defaults '(hjson-highlights nil nil)) ;; https://emacs.stackexchange.com/a/26264
-  (set (make-local-variable 'syntax-propertize-function)
+  (setq font-lock-defaults '(hjson-mode-highlights nil nil)) ;; https://emacs.stackexchange.com/a/26264
+  (set (make-local-variable #'syntax-propertize-function)
        hjson-mode-syntax-propertize-function))
-
 
 
 ;; add the mode to the `features' list
 (provide 'hjson-mode)
+
+(add-to-list 'auto-mode-alist '("\\.hjson\\'" . hjson-mode))
 
 ;;; hjson-mode.el ends here 
