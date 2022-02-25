@@ -13,7 +13,7 @@ It may be added to Melpa in the future, but until then execute the following cod
 
 ```bash
 cd ~/.emacs.d
-wget https://raw.githubusercontent.com/stampyzfanz/hjson-emacs/main/hjson-mode.el
+wget https://raw.githubusercontent.com/hjson/hjson-emacs/main/hjson-mode.el
 echo "(load-file \"~/.emacs.d/hjson-mode.el\")" >> init.el
 echo "(add-to-list 'auto-mode-alist '(\"\\\\\\\\.hjson\\\\\\\\'\" . hjson-mode))" >> init.el
 ```
